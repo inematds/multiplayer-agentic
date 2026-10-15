@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multiplayer Agentic — personas, agentes y bots en el mismo espacio</title>
+<meta name="description" content="Documento de concepto en discusión: un sistema donde personas, agentes de IA y bots de Telegram trabajan en el mismo espacio. Seis escenarios, límites, seguridad, personalidades y 17 fuentes.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/multiplayer-agentic/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/multiplayer-agentic/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/multiplayer-agentic/guia/es/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+@@CSS@@
+  .card h3 a{color:var(--txt)} .card h3 a:hover{color:var(--amb)}
+  .card .mais{display:inline-block;margin-top:.7em;font-size:.86rem;font-family:Sora;font-weight:600}
+  .q{counter-reset:q;list-style:none;padding:0;margin:0;max-width:74ch}
+  .q li{counter-increment:q;position:relative;padding:.7em 0 .7em 46px;border-bottom:1px solid var(--line)}
+  .q li:before{content:counter(q);position:absolute;left:0;top:.6em;width:30px;height:30px;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">🎮</span> Multiplayer Agentic</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#oque">Qué es</a>
+    <a class="sec" href="#cenarios">Escenarios</a>
+    <a class="sec" href="#atencao">Límites</a>
+    <a class="sec" href="#paginas">Páginas</a>
+    <span class="lang"><a href="../">PT</a><a href="../en/">EN</a><a class="on" href="./">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
+    <a class="btn" href="https://github.com/inematds/multiplayer-agentic" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Concepto en discusión</span>
+      <h1>De la IA sola a la IA <span class="amb">multiplayer</span></h1>
+      <p class="lead">Personas, agentes de IA y bots trabajando en el mismo espacio, viendo lo que llega y conversando entre sí.</p>
+      <div class="cta">
+        <a class="btn" href="conceito.html">Leer el concepto</a>
+        <a class="btn ghost" href="#cenarios">Ver los 6 escenarios</a>
+      </div>
+    </div>
+    <figure><img src="../assets/banner-es.jpg" alt="IA Multiplayer: personas, agentes y bots en el mismo espacio"></figure>
+  </div>
+</header>
+
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">En resumen</span>
+  <p>Este es un documento de concepto, no un programa listo. Discute cómo sería un sistema en el que personas, agentes de IA (como Claude Code y Codex) y bots de Telegram comparten los mismos canales, como en un chat de equipo. Hoy cada uno usa la IA por su cuenta; la idea es que todo el equipo, humanos y agentes, trabaje junto y vea todo lo que está pasando. Sirve para quien quiere pensar este modelo para uso propio, para empresas o para juegos. Solo hay que leer: cada página trae posibilidades, riesgos y las fuentes consultadas.</p>
+</div></section>
+
+<section id="oque"><div class="wrap">
+  <span class="chip">Qué es</span>
+  <h2>Single-player × multiplayer</h2>
+  <p class="sub">Hasta ahora, cada persona tiene su asistente de IA aislado. En el modelo multiplayer, personas y agentes de varios dueños pasan a ser miembros del mismo espacio.</p>
+  <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-es.jpg" alt="Seis escenarios: uso local, invitados, un sector, empresa completa, juegos, clientes y proveedores" loading="lazy" style="width:100%;display:block"></figure>
+  <div class="grid g3">
+    <div class="card"><h3>👥 Todos en el mismo canal</h3><p>Humanos y agentes son miembros, con perfil propio. Tres personas pueden hablar con el mismo agente al mismo tiempo.</p></div>
+    <div class="card"><h3>🔁 Agente habla con agente</h3><p>Un agente le pide ayuda a otro y lo resuelven juntos, con el humano aprobando lo que sale hacia afuera.</p></div>
+    <div class="card"><h3>📡 Todo visible</h3><p>Los mensajes de Telegram, de los agentes, de las colas y de las personas llegan a una sola pantalla, en tiempo real.</p></div>
+  </div>
+</div></section>
+
+<section id="formas"><div class="wrap">
+  <span class="chip">Formas posibles</span>
+  <h2>Del panel al equipo completo</h2>
+  <p class="sub">Cuatro formas en discusión, de la más simple a la más completa.</p>
+  <div class="flow">
+    <span>A · Solo observar</span><span class="arr">→</span>
+    <span>B · Observar y conversar</span><span class="arr">→</span>
+    <span>C · Multiplayer completo</span><span class="arr">→</span>
+    <span>D · Crecer por capas</span>
+  </div>
+  <p style="margin-top:1.4em"><a href="formas.html">Ver pros y contras de cada forma →</a> · <a href="base-tecnica.html">Bases técnicas posibles →</a></p>
+</div></section>
+
+<section id="cenarios"><div class="wrap">
+  <span class="chip">Escenarios</span>
+  <h2>Seis escenarios de uso</h2>
+  <p class="sub">Del menor al mayor en personas, riesgo y costo. Cada escenario tiene una página con quién participa, un día típico, variaciones y riesgos.</p>
+  <div class="grid g3">
+    <div class="card"><div class="num">1</div><h3><a href="cenario-1.html">Uso local</a></h3><p>Tú y tus agentes. Un panel donde llega todo lo que hacen los bots, agentes y colas.</p><a class="mais" href="cenario-1.html">Abrir →</a></div>
+    <div class="card"><div class="num">2</div><h3><a href="cenario-2.html">Con invitados</a></h3><p>Socios y aliados conversan con sus agentes, sin poder darles órdenes.</p><a class="mais" href="cenario-2.html">Abrir →</a></div>
+    <div class="card"><div class="num">3</div><h3><a href="cenario-3.html">Un sector</a></h3><p>Un equipo con agente líder, check-in diario y rutinas con aprobación.</p><a class="mais" href="cenario-3.html">Abrir →</a></div>
+    <div class="card"><div class="num">4</div><h3><a href="cenario-4.html">Empresa completa</a></h3><p>Varios sectores, agentes por área, gobernanza, auditoría y costo por área.</p><a class="mais" href="cenario-4.html">Abrir →</a></div>
+    <div class="card"><div class="num">5</div><h3><a href="cenario-5.html">Juegos</a></h3><p>Maestro-agente, NPC con memoria, equipos mixtos y curso como misión.</p><a class="mais" href="cenario-5.html">Abrir →</a></div>
+    <div class="card"><div class="num">6</div><h3><a href="cenario-6.html">Clientes y proveedores</a></h3><p>Atención supervisada y agente negociando con agente, con aprobación humana.</p><a class="mais" href="cenario-6.html">Abrir →</a></div>
+  </div>
+  <p style="margin-top:1.4em"><a href="cenarios.html">Visión general y cómo se conectan los escenarios →</a></p>
+</div></section>
+
+<section id="atencao"><div class="wrap">
+  <span class="chip">Puntos de atención</span>
+  <h2>Límites, seguridad y personalidades</h2>
+  <p class="sub">Cuanta más gente y más agentes en el mismo espacio, más controles pasan a ser obligatorios.</p>
+  <div class="grid g3">
+    <div class="card"><h3>⏱️ <a href="limites-seguranca.html">Límites</a></h3><p>Tope de turnos entre agentes, presupuesto por sala, cuota de la suscripción, horario y disponibilidad.</p><a class="mais" href="limites-seguranca.html">Abrir →</a></div>
+    <div class="card"><h3>🛡️ <a href="limites-seguranca.html">Seguridad</a></h3><p>Identidad, permisos, inyección de prompt, aprobación humana, secretos, auditoría y LGPD.</p><a class="mais" href="limites-seguranca.html">Abrir →</a></div>
+    <div class="card"><h3>🎭 <a href="personalidades.html">Personalidades</a></h3><p>Perfiles de personas y agentes, niveles de inteligencia y arquetipos: líder, consejo, maestro de juego, NPC.</p><a class="mais" href="personalidades.html">Abrir →</a></div>
+  </div>
+</div></section>
+
+<section id="paginas"><div class="wrap">
+  <span class="chip">Páginas</span>
+  <h2>El documento completo</h2>
+  <p class="sub">Lee en orden o salta a lo que te interesa.</p>
+  <div class="grid g4">
+    <div class="card"><h3><a href="conceito.html">La idea</a></h3><p>De dónde vino y la tesis single-player × multiplayer.</p></div>
+    <div class="card"><h3><a href="formas.html">Formas del sistema</a></h3><p>Observar, conversar, completo o por capas.</p></div>
+    <div class="card"><h3><a href="base-tecnica.html">Base técnica</a></h3><p>Buzz, Matrix, Zulip, construcción propia y otras.</p></div>
+    <div class="card"><h3><a href="questoes.html">Preguntas abiertas</a></h3><p>Identidad, costo, memoria, privacidad, ruido.</p></div>
+    <div class="card"><h3><a href="empresas.html">Para empresas</a></h3><p>Usos y contrapuntos.</p></div>
+    <div class="card"><h3><a href="jogos.html">Para juegos</a></h3><p>Formatos y lo que dicen las fuentes sobre los límites.</p></div>
+    <div class="card"><h3><a href="caso-inema.html">Caso INEMA</a></h3><p>Lo que ya existe y tres lecturas posibles.</p></div>
+    <div class="card"><h3><a href="fontes.html">Fuentes</a></h3><p>Las 17 fuentes consultadas, numeradas.</p></div>
+  </div>
+</div></section>
+
+<section id="discutir"><div class="wrap">
+  <span class="chip">Para discutir</span>
+  <h2>Preguntas abiertas</h2>
+  <p class="sub">Nada aquí está decidido. Estas son las preguntas que orientan el próximo paso.</p>
+  <ol class="q">
+    <li>¿La ganancia principal es colaborar (varias personas) u observar (una persona viendo varios agentes)?</li>
+    <li>¿Qué forma: solo observar, observar y conversar, multiplayer completo o crecer por capas?</li>
+    <li>¿Vale la pena probar una base abierta lista antes de construir algo propio?</li>
+    <li>¿Qué escenario va primero: subir peldaño por peldaño o apuntar directo a un escenario objetivo?</li>
+    <li>¿Quién entra: solo el dueño, el equipo, o alumnos y clientes?</li>
+  </ol>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Concepto</div><div class="pill">Agentes de IA</div><div class="pill">Multiplayer</div>
+    <p style="margin-top:18px">Multiplayer Agentic · documento de concepto en discusión ·
+      <a href="https://github.com/inematds/multiplayer-agentic">inematds/multiplayer-agentic</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='multiplayer-agentic-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html>
